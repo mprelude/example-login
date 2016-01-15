@@ -119,6 +119,10 @@ class FeatureContext extends BehatContext
     {
         $obj = $this->session->getPage()->find('named', array('id_or_name', $div));
 
+        if (null === $obj) {
+            throw new Exception("The message div doesn't exist.");
+        }
+
         if ($obj->getHtml() !== $message) {
             throw new Exception("Actual output is ".$obj->getHtml());
         }
