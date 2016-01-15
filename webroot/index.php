@@ -1,0 +1,27 @@
+<?php
+
+require_once "../vendor/autoload.php";
+
+if (true === isset($_POST['username'])) {
+    if ("" === $_POST['username'] || "" === $_POST['password']) {
+        echo "<div id='message'>Please enter username &amp; password.</div>";
+    } elseif ("user" === $_POST['username'] && "password" === $_POST['password']) {
+        echo "<div id='message'>Access granted.</div>";
+    } else {
+        echo "<div id='message'>Access denied.</div>";
+    }
+}
+
+?>
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="index.php" method="POST">
+            Username:<br>
+            <input type="text" name="username"><br>
+            Password:<br>
+            <input type="password" name="password">
+            <input type="submit" name="submitLogin" value="Submit">
+        </form>
+    </body>
+</html>
