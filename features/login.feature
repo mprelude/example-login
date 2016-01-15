@@ -1,5 +1,5 @@
 Feature: Login
-77;20202;0c  I should be able to log in with username "user"
+  I should be able to log in with username "user"
   and password "password".
 
   Scenario: Logging in with correct username & password

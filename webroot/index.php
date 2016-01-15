@@ -2,18 +2,7 @@
 
 require_once "../vendor/autoload.php";
 
-if (true === isset($_POST['username'])) {
-    if ("" === $_POST['username'] || "" === $_POST['password']) {
-        echo "<div id='message'>Please enter username &amp; password.</div>";
-    } elseif ("user" === $_POST['username'] && "password" === $_POST['password']) {
-        echo "<div id='message'>Access granted.</div>";
-    } else {
-        echo "<div id='message'>Access denied.</div>";
-    }
-}
-
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
     <body>
         <form action="index.php" method="POST">
