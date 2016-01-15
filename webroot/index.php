@@ -16,6 +16,15 @@ if (true === isset($_POST['username'])) {
 <!DOCTYPE html>
 <html>
     <body>
+        <?php if (true === isset($_POST['username'])): ?>
+            <?php if ("" === $_POST['username'] || "" === $_POST['password']): ?>
+                <div id='message'>Please enter username &amp; password.</div>
+            <?php elseif ("user" === $_POST['username'] && "password" === $_POST['password']): ?>
+                <div id='message'>Access granted.</div>
+            <?php else: ?>
+                <div id='message'>Access denied.</div>
+            <?php endif; ?>
+        <?php endif; ?>
         <form action="index.php" method="POST">
             Username:<br>
             <input type="text" name="username"><br>
